@@ -1,0 +1,57 @@
+.inputName {
+  outline: none;
+  padding: 0 15px;
+  min-width: 265px;
+  min-height: 45px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  box-sizing: border-box;
+  text-overflow: ellipsis;
+
+  &:focus {
+    border: 1px solid #000000;
+  }
+
+  &::placeholder {
+    color: rgba(0, 0, 0, 0.3);
+    @media screen and (min-width: 1367px) {
+      line-height: 2.5vh;
+      font-size: 1.4vh;
+    }
+  }
+
+  &_dark {
+    background: #0c0c0c;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    &:focus {
+      border: 1px solid #ffffff;
+    }
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.3);
+
+      @media screen and (min-width: 1367px) {
+        line-height: 2.5vh;
+        font-size: 1.4vh;
+      }
+    }
+  }
+
+  @media screen and (min-width: 2200px) {
+    border-radius: 0.6vh;
+  }
+  @media screen and (min-width: 1367px) {
+    width: calc((100% - 40px) / 3);
+    height: 4vh;
+    line-height: 2.5vh;
+    font-size: 1.4vh;
+  }
+  @media screen and (max-width: 1365px) {
+    min-width: calc((100% - 60px) / 4);
+  }
+}

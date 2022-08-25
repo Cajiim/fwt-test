@@ -1,0 +1,183 @@
+.range {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: calc((100% - 60px) / 4);
+  line-height: 15px;
+  min-height: 45px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  background: white;
+  color: black;
+  border-radius: 8px;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  @media screen and (min-width: 2200px) {
+    border-radius: 0.6vh 0.6vh 0.6vh 0.6vh;
+  }
+
+  &_open {
+    border: 1px solid #000000;
+    border-bottom: 1px solid transparent;
+    border-radius: 8px 8px 0 0;
+
+    @media screen and (min-width: 2200px) {
+      border-radius: 0.6vh 0.6vh 0 0;
+    }
+  }
+
+  &_dark {
+    background: #0c0c0c;
+    border-color: #ffffff;
+  }
+
+  @media screen and (min-width: 1367px) {
+    width: calc((100% - 40px) / 3);
+    height: 4vh;
+    line-height: 2.5vh;
+  }
+  @media screen and (max-width: 1365px) {
+    min-width: calc((100% - 60px) / 4);
+  }
+  @media screen and (max-width: 320px) {
+    width: 100%;
+  }
+  &_activeDark {
+    border-bottom: 1px solid transparent;
+  }
+
+  &__title{
+    margin: 0 0 0 15px;
+    font-style: normal;
+    font-size: 13px;
+    line-height: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  
+    &_dark {
+      color: #ffffff;
+    }
+    @media screen and (min-width: 1367px) {
+      font-size: 1.4vh;
+      line-height: 2.5vh;
+    }
+    @media screen and (max-width: 1024px) {
+      width: auto;
+    }
+    @media screen and (max-width: 540px) {
+      width: 40%;
+    }
+    @media screen and (max-width: 320px) {
+      width: 75%;
+    }
+  }
+  &__arrow{
+    position: absolute;
+    display: flex;
+    right: 18px;
+    float: right;
+    width: 10px;
+    height: 6px;
+    fill: #b3b3b3;
+  
+    &_dark {
+      fill: rgba(255, 255, 255, 0.3);
+    }
+    @media screen and (min-width: 1367px) {
+      width: 0.7vw;
+      height: 0.7vh;
+    }
+    @media screen and (max-width: 540px) {
+      right: 6px;
+    }
+    @media screen and (max-width: 370px) {
+      right: 2px;
+    }
+    @media screen and (max-width: 320px) {
+      right: 18px;
+    }
+  }
+  &__сontainer{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    background: white;
+    min-width: 100.9%;
+    min-height: 85px;
+    border: 1px solid black;
+    border-style: none solid solid;
+    border-radius: 0px 0px 8px 8px;
+    top: 43px;
+    left: -1px;
+    box-sizing: border-box;
+    z-index: 1;
+  
+    &_active {
+      border-top: none;
+      display: flex;
+
+      @media screen and (min-width: 2400px) {
+        left: -1.3px;
+        top: 42px;
+        border-radius: 0px 0px 0.6vh 0.6vh;
+        min-width: 120%;
+      }
+      @media screen and (min-width: 3000px) {
+        left: -2px;
+        top: 42px;
+      }
+      @media screen and (min-width: 1500px) {
+        min-width: 100.7%;
+        height: 10vh;
+        min-height: 85px;
+      }
+      @media screen and (min-width: 1920px) {
+        min-width: 100.4%;
+      }
+      @media screen and (max-width: 1040px) {
+        flex-direction: column;
+        height: 160px;
+      }
+      @media screen and (max-width: 820px) {
+        min-width: 101.4%;
+      }
+      @media screen and (max-width: 570px) {
+        min-width: 102.3%;
+      }
+      @media screen and (max-width: 400px) {
+        min-width: 103.7%;
+      }
+      @media screen and (max-width: 320px) {
+        height: 85px;
+      }
+      @media screen and (max-width: 320px) {
+        min-width: 100.8%;
+      }
+      @media screen and (min-width: 2400px) {
+        min-width: 100.5%;
+      }
+      @media screen and (min-width: 3000px) {
+        min-width: 100.3%;
+      }
+      @media screen and (min-width: 3600px) {
+        min-width: 100.6%;
+      }
+      @media screen and (min-width: 4500px) {
+        min-width: 100.3%;
+      }
+    }
+  
+    &_dark {
+      background: #0c0c0c;
+      border-color: #ffffff;
+    }
+    @media screen and (min-width: 3800px) {
+      top: 3.9vh;
+    }
+  }
+}

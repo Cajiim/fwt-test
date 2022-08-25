@@ -1,0 +1,238 @@
+.select {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 265px;
+  min-height: 45px;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 0px 1px;
+  color: black;
+  box-sizing: border-box;
+  background: white;
+  cursor: pointer;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+
+  &_open {
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0px 0px 0px 1px black;
+    &_dark {
+      box-shadow: 0px 0px 0px 1px #ffffff;
+    }
+
+    @media screen and (min-width: 2200px) {
+      border-radius: 0.6vh;
+    }
+  }
+  @media screen and (min-width: 2200px) {
+    border-radius: 0.6vh;
+    &_open {
+      border-radius: 0.6vh 0.6vh 0 0;
+    }
+  }
+  @media screen and (min-width: 1367px) {
+    width: calc((100% - 40px) / 3);
+    height: 4vh;
+    line-height: 2.5vh;
+
+    &_open {
+      box-shadow: 0px 0px 0px 1px black;
+    }
+  }
+  @media screen and (max-width: 1365px) {
+    min-width: calc((100% - 60px) / 4);
+  }
+
+  &_dark {
+    background: #0c0c0c;
+    box-shadow: #ffffff 0px 0px 0px 1px;
+    color: #ffffff;
+  }
+
+  &__name {
+    margin: 0 0 0 15px;
+    width: 75%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    @media screen and (min-width: 1367px) {
+      font-size: 1.4vh;
+    }
+    @media screen and (max-width: 1000px) {
+      width: 70%;
+    }
+    @media screen and (max-width: 700px) {
+      width: 50%;
+    }
+    @media screen and (max-width: 540px) {
+      width: 40%;
+    }
+    @media screen and (max-width: 320px) {
+      width: 75%;
+    }
+  }
+  &__list {
+    display: block;
+    position: absolute;
+    width: 100%;
+    box-shadow: 0px 0px 0px 1px black;
+    border-radius: 8px;
+    top: 46px;
+    z-index: 3;
+    background: white;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    overflow: overlay;
+
+    &_open {
+      border-radius: 0 0 8px 8px;
+      max-height: 300px;
+      @media screen and (min-width: 2200px) {
+        max-height: 40vh;
+        font-size: 2vh;
+        line-height: 3vh;
+        min-height: 300px;
+      }
+      @media screen and (max-width: 1024px) {
+        max-height: 355px;
+      }
+    }
+    @media screen and (min-width: 2400px) {
+      top: 4vh;
+    }
+    &_dark {
+      background: #0c0c0c;
+      box-shadow: 0px 0px 0px 1px #ffffff;
+    }
+  }
+  &__dropDown {
+    position: absolute;
+    display: flex;
+    right: 18px;
+    float: right;
+    fill: #b3b3b3;
+    width: 10px;
+    height: 6px;
+
+    &_dark {
+      fill: rgba(255, 255, 255, 0.3);
+    }
+
+    @media screen and (min-width: 1367px) {
+      width: 0.7vw;
+      height: 0.7vh;
+    }
+    @media screen and (max-width: 540px) {
+      right: 6px;
+    }
+    @media screen and (max-width: 370px) {
+      right: 2px;
+    }
+    @media screen and (max-width: 320px) {
+      right: 18px;
+    }
+  }
+  &__items {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 10px 10px 22px;
+
+    &:hover {
+      background: black;
+      color: white;
+    }
+    &:first-of-type {
+      margin-top: 10px;
+    }
+    &:last-of-type {
+      margin-bottom: 10px;
+    }
+
+    &_dark {
+      &:hover {
+        background: #ffffff;
+        color: #000000;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      padding: 10px 10px 10px 15px;
+    }
+    @media screen and (max-width: 320px) {
+      padding: 10px 10px 10px 30px;
+    }
+  }
+  &__clear {
+    &::before {
+      content: '';
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      bottom: 14.5px;
+      right: 35px;
+
+      @media screen and (min-width: 1367px) {
+        content: none;
+      }
+      @media screen and (max-width: 540px) {
+        right: 20px;
+      }
+      @media screen and (max-width: 370px) {
+        right: 13px;
+        bottom: 15px;
+        width: 13px;
+        height: 13px;
+      }
+      @media screen and (max-width: 320px) {
+        width: 15px;
+        height: 15px;
+        bottom: 14.5px;
+        right: 35px;
+      }
+    }
+
+    &_hidden {
+      display: none;
+    }
+  }
+  &__clearIcon {
+    position: absolute;
+    bottom: 18px;
+    right: 38px;
+    fill: #555555;
+    opacity: 0.3;
+
+    &_dark {
+      fill: rgba(255, 255, 255, 0.3);
+    }
+
+    @media screen and (min-width: 1367px) {
+      position: relative;
+      bottom: 0;
+      margin-right: 3.5vh;
+      width: 1.2vw;
+      height: 1.2vh;
+      display: flex;
+      right: 10%;
+    }
+    @media screen and (max-width: 540px) {
+      right: 24px;
+    }
+    @media screen and (max-width: 370px) {
+      right: 15px;
+    }
+    @media screen and (max-width: 320px) {
+      right: 38px;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.pagination {
+  display: flex;
+  width: fit-content;
+  margin: 0 0 97px 0;
+
+  @media screen and (max-width: 1024px) {
+    margin: 0 0 62px 0;
+  }
+  @media screen and (max-width: 768px) {
+    margin: 0 0 54px 0;
+  }
+  @media screen and (max-width: 320px) {
+    margin: 0 0 32px 0;
+  }
+
+  &__arrow {
+    width: 1vh;
+    height: 1vh;
+    min-width: 8px;
+    min-height: 13px;
+  }
+  &__doubleArrow {
+    width: 1vh;
+    height: 1vh;
+    min-width: 14px;
+    min-height: 14px;
+  }
+}

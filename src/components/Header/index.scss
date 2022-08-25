@@ -1,0 +1,39 @@
+.header {
+  height: 134px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media screen and (max-width: 320px) {
+    height: 118px;
+  }
+
+  &__logo {
+    height: 68px;
+    width: 68px;
+
+    @media screen and (min-width: 1367px) {
+      min-height: 68px;
+      min-width: 68px;
+      height: 8vh;
+      width: 1.5vw;
+    }
+  }
+
+  &__themeIcon {
+    height: 20px;
+    width: 20px;
+    fill: #000000;
+    cursor: pointer;
+
+    &_dark {
+      fill: #ffffff;
+    }
+    @media screen and (min-width: 1367px) {
+      min-height: 20px;
+      min-width: 20px;
+      width: 1.5vw;
+      height: 1.5vh;
+    }
+  }
+}

@@ -1,0 +1,68 @@
+.paginationPage {
+  width: 40px;
+  height: 41px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+  border: 1px solid black;
+  border-right: none;
+  background: inherit;
+
+  &:hover {
+    background: #ededed;
+    border-color: black;
+  }
+  &:disabled {
+    border-color: #b3b3b3;
+    fill: rgba(0, 0, 0, 0.3);
+    &:hover {
+      cursor: auto;
+      background: inherit;
+    }
+  }
+  &:first-of-type {
+    border-radius: 8px 0 0 8px;
+    @media screen and (min-width: 2200px) {
+      border-radius: 1vh 0 0 1vh;
+    }
+  }
+  &:last-child {
+    border-radius: 0 8px 8px 0;
+    border-right: 1px solid;
+    @media screen and (min-width: 2200px) {
+      border-radius: 0 1vh 1vh 0;
+    }
+  }
+  &_dark {
+    border: 1px solid white;
+    border-right: none;
+    fill: #ffffff;
+    &:last-child {
+      border-right: 1px solid white;
+    }
+    &:hover {
+      background: #464646;
+      border-color: white;
+    }
+    &:disabled {
+      border-color: rgba(255, 255, 255, 0.3);
+      fill: rgba(255, 255, 255, 0.3);
+      &:hover {
+        cursor: auto;
+        background: inherit;
+      }
+    }
+  }
+  @media screen and (min-width: 1367px) {
+    min-width: 40px;
+    min-height: 41px;
+    width: 4vh;
+    height: 4vh;
+  }
+  @media screen and (min-width: 1500px) {
+    font-size: 1.5vh;
+    line-height: 2vh;
+  }
+}
