@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/fwt-test/static/css/main.7080429d.css",
+    "main.css": "/fwt-test/static/css/main.6ee37225.css",
     "main.js": "/fwt-test/static/js/main.df625440.js",
     "static/media/themeIcon.svg": "/fwt-test/static/media/themeIcon.45d8519272ec10cf01cb05c85ce5bce4.svg",
     "static/media/fwt-logo.svg": "/fwt-test/static/media/fwt-logo.331a48dde5e9dbac67691d965d96b7fb.svg",
@@ -11,11 +11,11 @@
     "static/media/arrowLeft.svg": "/fwt-test/static/media/arrowLeft.39922503769c59f0debc957e13ca8198.svg",
     "static/media/arrowRight.svg": "/fwt-test/static/media/arrowRight.6aceab1876b1deaa250e6a9c491c4fea.svg",
     "static/media/dropDown.svg": "/fwt-test/static/media/dropDown.9619a8edaaad8370924e39e051cfd53d.svg",
-    "main.7080429d.css.map": "/fwt-test/static/css/main.7080429d.css.map",
+    "main.6ee37225.css.map": "/fwt-test/static/css/main.6ee37225.css.map",
     "main.df625440.js.map": "/fwt-test/static/js/main.df625440.js.map"
   },
   "entrypoints": [
-    "static/css/main.7080429d.css",
+    "static/css/main.6ee37225.css",
     "static/js/main.df625440.js"
   ]
 }
