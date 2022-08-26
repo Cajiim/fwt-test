@@ -19,7 +19,7 @@
 
   &::placeholder {
     color: rgba(0, 0, 0, 0.3);
-    @media screen and (min-width: 1367px) {
+    @media screen and (min-width: 2200px) {
       line-height: 2.5vh;
       font-size: 1.4vh;
     }
@@ -35,7 +35,7 @@
     &::placeholder {
       color: rgba(255, 255, 255, 0.3);
 
-      @media screen and (min-width: 1367px) {
+      @media screen and (min-width: 2200px) {
         line-height: 2.5vh;
         font-size: 1.4vh;
       }
@@ -44,12 +44,12 @@
 
   @media screen and (min-width: 2200px) {
     border-radius: 0.6vh;
+    line-height: 2.5vh;
+    font-size: 1.4vh;
   }
   @media screen and (min-width: 1367px) {
     width: calc((100% - 40px) / 3);
     height: 4vh;
-    line-height: 2.5vh;
-    font-size: 1.4vh;
   }
   @media screen and (max-width: 1365px) {
     min-width: calc((100% - 60px) / 4);

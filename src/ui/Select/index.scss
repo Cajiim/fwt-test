@@ -36,7 +36,6 @@
   @media screen and (min-width: 1367px) {
     width: calc((100% - 40px) / 3);
     height: 4vh;
-    line-height: 2.5vh;
 
     &_open {
       box-shadow: 0px 0px 0px 1px black;
@@ -59,7 +58,8 @@
     text-overflow: ellipsis;
     white-space: nowrap;
 
-    @media screen and (min-width: 1367px) {
+    @media screen and (min-width: 2200px) {
+      line-height: 2.5vh;
       font-size: 1.4vh;
     }
     @media screen and (max-width: 1000px) {
@@ -128,7 +128,7 @@
       fill: rgba(255, 255, 255, 0.3);
     }
 
-    @media screen and (min-width: 1367px) {
+    @media screen and (min-width: 2200px) {
       width: 0.7vw;
       height: 0.7vh;
     }
@@ -159,6 +159,12 @@
     }
     &:last-of-type {
       margin-bottom: 10px;
+      @media screen and (max-width: 1024px) {
+        margin-bottom: 25px;
+      }
+      @media screen and (max-width: 320px) {
+        margin-bottom: 22px;
+      }
     }
 
     &_dark {
@@ -173,6 +179,13 @@
     }
     @media screen and (max-width: 320px) {
       padding: 10px 10px 10px 30px;
+    }
+
+    &Name {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 95%;
+      white-space: nowrap;
     }
   }
   &__clear {
