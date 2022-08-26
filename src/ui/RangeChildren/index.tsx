@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useState, memo } from 'react';
 import classNames from 'classnames';
 import useQueryParams from '../../hooks/useQueryParams';
 import styles from './index.scss';
@@ -32,6 +32,7 @@ const RangeChildren: FC<TChild> = ({ valueFilterFrom, valueFilterBefore, isDarkT
         })}
         onChange={handlChangeFrom}
         value={valueFrom}
+        type="number"
       />
       <span
         className={cn('rangeChild__line', {
@@ -44,9 +45,10 @@ const RangeChildren: FC<TChild> = ({ valueFilterFrom, valueFilterBefore, isDarkT
         })}
         onChange={handlChangeBefore}
         value={valueBefore}
+        type="number"
       />
     </div>
   );
 };
 
-export default RangeChildren;
+export default memo(RangeChildren);

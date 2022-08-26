@@ -1,4 +1,4 @@
-import { FC, useState, useRef } from 'react';
+import { FC, useState, useRef, memo } from 'react';
 import SimpleBar from 'simplebar-react';
 import classNames from 'classnames';
 import Arrow from '../Arrow';
@@ -87,4 +87,4 @@ const Select: FC<TSelect> = ({ isDarkTheme, value, data, onChange }) => {
   );
 };
 
-export default Select;
+export default memo(Select);

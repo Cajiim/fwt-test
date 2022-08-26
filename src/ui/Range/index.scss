@@ -48,7 +48,7 @@
     border-bottom: 1px solid transparent;
   }
 
-  &__title{
+  &__title {
     margin: 0 0 0 15px;
     font-style: normal;
     font-size: 13px;
@@ -56,7 +56,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-  
+
     &_dark {
       color: #ffffff;
     }
@@ -74,16 +74,16 @@
       width: 75%;
     }
   }
-  &__arrow{
+  &__arrow {
     position: absolute;
     display: flex;
     right: 18px;
     float: right;
     width: 10px;
     height: 6px;
-    fill: #b3b3b3;
+    fill: rgba(0, 0, 0, 0.3);
     fill-opacity: 1;
-  
+
     &_dark {
       fill: rgba(255, 255, 255, 0.3);
     }
@@ -101,7 +101,7 @@
       right: 18px;
     }
   }
-  &__сontainer{
+  &__сontainer {
     position: absolute;
     display: flex;
     justify-content: center;
@@ -117,7 +117,7 @@
     left: -1px;
     box-sizing: border-box;
     z-index: 1;
-  
+
     &_active {
       border-top: none;
       display: flex;
@@ -172,7 +172,7 @@
         min-width: 100.3%;
       }
     }
-  
+
     &_dark {
       background: #0c0c0c;
       border-color: #ffffff;

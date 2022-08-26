@@ -65,6 +65,9 @@
     @media screen and (max-width: 1000px) {
       width: 70%;
     }
+    @media screen and (max-width: 768px) {
+      width: 60%;
+    }
     @media screen and (max-width: 700px) {
       width: 50%;
     }
@@ -117,10 +120,9 @@
     display: flex;
     right: 18px;
     float: right;
-    fill: #b3b3b3;
+    fill: rgba(0, 0, 0, 0.3);
     width: 10px;
     height: 6px;
-    fill-opacity: 1;
 
     &_dark {
       fill: rgba(255, 255, 255, 0.3);
@@ -210,10 +212,10 @@
     position: absolute;
     bottom: 18px;
     right: 38px;
-    fill: #555555;
+    fill: rgba(0, 0, 0, 0.3);
 
     &_dark {
-      fill: rgba(255, 255, 255, 0.3);
+      fill: #555555;
     }
 
     @media screen and (min-width: 1367px) {
