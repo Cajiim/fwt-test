@@ -26,7 +26,7 @@ const Input: FC<TInput> = ({ className, isDarkTheme }) => {
       placeholder="Name"
       onChange={onChange}
       className={cn(className, { [`${className}_dark`]: isDarkTheme })}
-      value={value.trim()}
+      value={value}
     />
   );
 };
