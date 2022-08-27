@@ -6,42 +6,26 @@
     height: 145px;
   }
 }
-@keyframes recoveryHighResolution {
-  from {
-    height: 3vh;
-  }
-  to {
-    height: 20vh;
-  }
-}
 
 .painting {
   width: 360px;
   height: 275px;
   border-radius: 20px;
   position: relative;
+  overflow: hidden;
 
-  @media screen and (min-width: 1367px) {
-    width: calc((100% - 40px) / 3);
-    height: 20vh;
-    min-height: 275px;
-  }
-  @media screen and (min-width: 1920px) {
-    height: 40vh;
-  }
   @media screen and (max-width: 1365px) {
+    height: auto;
     width: calc((100% - 40px) / 3);
+    aspect-ratio: 300 / 230;
   }
-  @media screen and (max-width: 1024px) {
-    height: 230px;
-  }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1023px) {
     width: calc((100% - 20px) / 2);
-    height: 249px;
+    aspect-ratio: 340 / 249;
   }
-  @media screen and (max-width: 320px) {
+  @media screen and (max-width: 767px) {
     width: 100%;
-    height: 205px;
+    aspect-ratio: 280 / 205;
   }
 
   &__img {
@@ -50,28 +34,16 @@
     height: 275px;
     border-radius: 20px;
 
-    @media screen and (min-width: 2200px) {
-      border-radius: 1.5vh;
-    }
-    @media screen and (min-width: 1367px) {
-      width: 100%;
-      height: 20vh;
-      min-height: 275px;
-    }
-    @media screen and (min-width: 1920px) {
-      height: 40vh;
-    }
     @media screen and (max-width: 1365px) {
+      height: auto;
       width: 100%;
+      aspect-ratio: 300 / 230;
     }
-    @media screen and (max-width: 1024px) {
-      height: 230px;
+    @media screen and (max-width: 1023px) {
+      aspect-ratio: 340 / 249;
     }
-    @media screen and (max-width: 768px) {
-      height: 249px;
-    }
-    @media screen and (max-width: 320px) {
-      height: 205px;
+    @media screen and (max-width: 767px) {
+      aspect-ratio: 280 / 205;
     }
   }
 
@@ -100,18 +72,6 @@
       div {
         display: block;
       }
-
-      @media screen and (min-width: 1920px) {
-        animation: recoveryHighResolution 1s forwards;
-      }
-    }
-    @media screen and (min-width: 2200px) {
-      border-radius: 1.5vh;
-      border-radius: 0 0 1.5vh 1.5vh;
-    }
-    @media screen and (min-width: 1367px) {
-      height: 3vh;
-      min-height: 30px;
     }
   }
 
@@ -123,11 +83,6 @@
     line-height: 20px;
     text-transform: capitalize;
     color: #000000;
-
-    @media screen and (min-width: 2200px) {
-      font-size: 1.6vh;
-      line-height: 2vh;
-    }
   }
 
   &__author {
@@ -137,23 +92,13 @@
     font-size: 13px;
     line-height: 20px;
     color: #000000;
-
-    @media screen and (min-width: 2200px) {
-      font-size: 1.3vh;
-      line-height: 2vh;
-    }
   }
 
   &__authorName {
     font-weight: 300;
     margin-left: 2px;
-
-    @media screen and (min-width: 2200px) {
-      font-size: 1.3vh;
-      line-height: 2vh;
-    }
   }
-  
+
   &__created {
     font-family: 'Roboto';
     font-style: normal;
@@ -162,20 +107,10 @@
     line-height: 20px;
     color: #000000;
     font-weight: 600;
-
-    @media screen and (min-width: 2200px) {
-      font-size: 1.3vh;
-      line-height: 2vh;
-    }
   }
   &__createdYear {
     font-weight: 300;
     margin-left: 4px;
-
-    @media screen and (min-width: 2200px) {
-      font-size: 1.3vh;
-      line-height: 2vh;
-    }
   }
   &__location {
     font-family: 'Roboto';
@@ -185,19 +120,9 @@
     line-height: 20px;
     color: #000000;
     font-weight: 600;
-
-    @media screen and (min-width: 2200px) {
-      font-size: 1.3vh;
-      line-height: 2vh;
-    }
   }
   &__locationName {
     font-weight: 300;
     margin-left: 4px;
-
-    @media screen and (min-width: 2200px) {
-      font-size: 1.3vh;
-      line-height: 2vh;
-    }
   }
 }

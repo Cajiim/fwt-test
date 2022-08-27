@@ -1,5 +1,5 @@
 import { useSearchParams } from 'react-router-dom';
-import { TFilter } from '../types';
+import type { TFilter } from '../types';
 
 const useQueryParams = () => {
   const [searchParams, setSearchParams] = useSearchParams();

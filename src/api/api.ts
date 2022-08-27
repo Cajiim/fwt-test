@@ -1,5 +1,6 @@
 import axios from 'axios';
-import { TFilter, TFilterParamsObj } from '../types';
+import type { TFilter, TFilterParamsObj } from '../types';
+
 export const baseURL = process.env.REACT_APP_API_BASE_ADDRESS;
 const instance = axios.create({ baseURL });
 

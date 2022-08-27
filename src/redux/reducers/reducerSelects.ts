@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
+import type { TSelectItem } from '../../types';
 import { fetchAuthors, fetchLocations } from '../thunk/fetchDataThunk';
-import { TSelectItem } from '../../types';
 
 type TSelectState = {
   dataAuthors: TSelectItem[];

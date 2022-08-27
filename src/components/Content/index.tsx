@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { useAppSelector } from '../../hooks/useReduxHooks';
 import Loader from '../Loader';
 import PaintingCard from '../PaintingCard';
-import { TCard } from '../../types';
+import type { TCard } from '../../types';
 import styles from './index.scss';
 const cn = classNames.bind(styles);
 

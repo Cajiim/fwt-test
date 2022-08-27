@@ -4,10 +4,10 @@
   flex-wrap: wrap;
   gap: 20px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1023px) {
     margin: 45px 0 35px 0;
   }
-  @media screen and (max-width: 320px) {
+  @media screen and (max-width: 767px) {
     margin: 45px 0 30px 0;
   }
 

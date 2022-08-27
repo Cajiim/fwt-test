@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { getPaintings, getLocations, getAuthors } from '../../api/api';
-import { TFilter } from '../../types';
+import type { TFilter } from '../../types';
 
 export const fetchPaintings = createAsyncThunk(
   'paintings/fetchPaintings',

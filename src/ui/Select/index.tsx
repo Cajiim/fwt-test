@@ -5,7 +5,7 @@ import Arrow from '../Arrow';
 import { ReactComponent as ClearSelect } from '../../assets/close.svg';
 import useQueryParams from '../../hooks/useQueryParams';
 import useOutsideClick from '../../hooks/useOutsideClick';
-import { TSelectItem } from '../../types';
+import type { TSelectItem } from '../../types';
 import styles from './index.scss';
 import './simpleBar.scss';
 const cn = classNames.bind(styles);
