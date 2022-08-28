@@ -100,13 +100,14 @@
   align-items: center;
   justify-content: center;
   margin: 40px 0 40px 0;
-}
-.loader__text {
-  font-size: 30px;
-  line-height: 35px;
-  margin-right: 20px;
 
-  &_dark {
-    color: white;
+  &__text {
+    font-size: 30px;
+    line-height: 35px;
+    margin-right: 20px;
+
+    &_dark {
+      color: white;
+    }
   }
 }
