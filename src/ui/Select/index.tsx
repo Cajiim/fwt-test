@@ -5,6 +5,8 @@ import Arrow from '../Arrow';
 import { ReactComponent as ClearSelect } from '../../assets/close.svg';
 import useQueryParams from '../../hooks/useQueryParams';
 import useOutsideClick from '../../hooks/useOutsideClick';
+import { useAppDispatch } from '../../hooks/useReduxHooks';
+import { restorePage } from '../../redux/reducers/reducerSelects';
 import type { TSelectItem } from '../../types';
 import styles from './index.scss';
 import './simpleBar.scss';
@@ -18,6 +20,7 @@ type TSelect = {
 };
 
 const Select: FC<TSelect> = ({ isDarkTheme, value, data, onChange }) => {
+  const dispatch = useAppDispatch();
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const { queryFilter, deleteQueryFilter } = useQueryParams();
   const [selectValue, setSelectValue] = useState<string>(
@@ -74,6 +77,7 @@ const Select: FC<TSelect> = ({ isDarkTheme, value, data, onChange }) => {
                 onClick={() => {
                   onChange(el.name || el.location);
                   setSelectValue(el.name || el.location);
+                  dispatch(restorePage());
                 }}
                 key={el.id}
                 aria-hidden="true">

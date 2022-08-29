@@ -1,7 +1,8 @@
-import { FC, useState, useEffect, SetStateAction, useCallback } from 'react';
+import { FC, useEffect, SetStateAction, useCallback } from 'react';
 import ActivePagination from './activePagination';
 import PaginationPage from './paginationPage';
 import { useAppDispatch, useAppSelector } from '../../hooks/useReduxHooks';
+import { setCurrentPage } from '../../redux/reducers/reducerSelects';
 import { fetchPaintings } from '../../redux/thunk/fetchDataThunk';
 import { useSearchParams } from 'react-router-dom';
 import { ReactComponent as ArrowLeft } from '../../assets/arrowLeft.svg';
@@ -15,11 +16,11 @@ const paintingPerPage = 12;
 const Pagination: FC = () => {
   const dispatch = useAppDispatch();
   const { totalCount } = useAppSelector(({ paintings }) => paintings);
-  const { dataAuthors, dataLocations } = useAppSelector(({ selects }) => selects);
+  const { dataAuthors, dataLocations, currentPage } = useAppSelector(({ selects }) => selects);
   const [searchParams] = useSearchParams();
-  const [currentPage, setCurrentPage] = useState<number>(1);
+
   const amount = Math.ceil(totalCount / paintingPerPage);
-  const onChange = (number: SetStateAction<number>) => setCurrentPage(number);
+  const onChange = (number: SetStateAction<number>) => dispatch(setCurrentPage(number));
 
   const getItems = useCallback(() => {
     let authorId = '';

@@ -9,6 +9,7 @@ type TSelectState = {
   isLoading: boolean;
   isError: boolean;
   errorText: string;
+  currentPage: number;
 };
 
 type TResponseData = {
@@ -21,12 +22,20 @@ const initialState: TSelectState = {
   isLoading: false,
   isError: false,
   errorText: '',
+  currentPage: 1,
 };
 
 const selectSlice = createSlice({
   name: 'selects',
   initialState,
-  reducers: {},
+  reducers: {
+    setCurrentPage(state, action) {
+      state.currentPage = action.payload;
+    },
+    restorePage(state) {
+      state.currentPage = 1;
+    },
+  },
   extraReducers: {
     [fetchAuthors.pending.type]: (state) => {
       state.isLoading = true;
@@ -57,5 +66,7 @@ const selectSlice = createSlice({
     },
   },
 });
+
+export const { setCurrentPage, restorePage } = selectSlice.actions;
 
 export default selectSlice.reducer;
