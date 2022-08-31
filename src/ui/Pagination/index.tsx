@@ -57,14 +57,10 @@ const Pagination: FC = () => {
         <ArrowLeft className="pagination__arrow" />
       </PaginationPage>
       <ActivePagination onChange={onChange} currentPage={currentPage} amount={amount} />
-      <PaginationPage
-        onClick={() => dispatch(setCurrentPage(currentPage + 1))}
-        disabled={currentPage >= amount}>
+      <PaginationPage onClick={() => onChange(currentPage + 1)} disabled={currentPage >= amount}>
         <ArrowRight className="pagination__arrow" />
       </PaginationPage>
-      <PaginationPage
-        onClick={() => dispatch(setCurrentPage(amount))}
-        disabled={currentPage >= amount}>
+      <PaginationPage onClick={() => onChange(amount)} disabled={currentPage >= amount}>
         <DoubleArrowRight className="pagination__doubleArrow" />
       </PaginationPage>
     </div>
