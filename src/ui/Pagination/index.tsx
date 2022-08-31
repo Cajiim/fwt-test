@@ -18,7 +18,6 @@ const Pagination: FC = () => {
   const { totalCount } = useAppSelector(({ paintings }) => paintings);
   const { dataAuthors, dataLocations, currentPage } = useAppSelector(({ selects }) => selects);
   const [searchParams] = useSearchParams();
-
   const amount = Math.ceil(totalCount / paintingPerPage);
   const onChange = (number: SetStateAction<number>) => dispatch(setCurrentPage(number));
 
