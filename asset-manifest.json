@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/fwt-test/static/css/main.e490f9dd.css",
-    "main.js": "/fwt-test/static/js/main.771c9fff.js",
+    "main.css": "/fwt-test/static/css/main.82e84318.css",
+    "main.js": "/fwt-test/static/js/main.ae639631.js",
     "static/media/themeIcon.svg": "/fwt-test/static/media/themeIcon.45d8519272ec10cf01cb05c85ce5bce4.svg",
     "static/media/fwt-logo.svg": "/fwt-test/static/media/fwt-logo.331a48dde5e9dbac67691d965d96b7fb.svg",
     "static/media/doubleArrowRight.svg": "/fwt-test/static/media/doubleArrowRight.682371a32d3a51706a18c05b308ef8f4.svg",
@@ -11,11 +11,11 @@
     "static/media/arrowRight.svg": "/fwt-test/static/media/arrowRight.6aceab1876b1deaa250e6a9c491c4fea.svg",
     "index.html": "/fwt-test/index.html",
     "static/media/dropDown.svg": "/fwt-test/static/media/dropDown.f7021f78714cd22b0959419a0ce13b0d.svg",
-    "main.e490f9dd.css.map": "/fwt-test/static/css/main.e490f9dd.css.map",
-    "main.771c9fff.js.map": "/fwt-test/static/js/main.771c9fff.js.map"
+    "main.82e84318.css.map": "/fwt-test/static/css/main.82e84318.css.map",
+    "main.ae639631.js.map": "/fwt-test/static/js/main.ae639631.js.map"
   },
   "entrypoints": [
-    "static/css/main.e490f9dd.css",
-    "static/js/main.771c9fff.js"
+    "static/css/main.82e84318.css",
+    "static/js/main.ae639631.js"
   ]
 }
