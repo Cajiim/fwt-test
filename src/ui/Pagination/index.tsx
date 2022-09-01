@@ -16,32 +16,22 @@ const paintingPerPage = 12;
 const Pagination: FC = () => {
   const dispatch = useAppDispatch();
   const { totalCount } = useAppSelector(({ paintings }) => paintings);
-  const { dataAuthors, dataLocations, currentPage } = useAppSelector(({ selects }) => selects);
+  const { currentPage } = useAppSelector(({ selects }) => selects);
   const [searchParams] = useSearchParams();
   const amount = Math.ceil(totalCount / paintingPerPage);
   const onChange = (number: SetStateAction<number>) => dispatch(setCurrentPage(number));
 
-  const getItems = useCallback(() => {
-    let authorId = '';
-    let locationId = '';
-    dataAuthors.find((el) => (el.name === searchParams.get('author') ? (authorId = el.id) : ''));
-    dataLocations.find((el) =>
-      el.location === searchParams.get('location') ? (locationId = el.id) : ''
-    );
-    return { authorId, locationId };
-  }, [dataAuthors, dataLocations, searchParams]);
-
   const setQueryFilter = useCallback(() => {
     return {
       q: searchParams.get('q') || '',
-      author: getItems().authorId,
-      location: getItems().locationId,
+      author: searchParams.get('author') || '',
+      location: searchParams.get('location') || '',
       gte: searchParams.get('created_gte') || '',
       lte: searchParams.get('created_lte') || '',
       page: currentPage,
       limit: paintingPerPage,
     };
-  }, [currentPage, getItems, searchParams]);
+  }, [currentPage, searchParams]);
 
   useEffect(() => {
     dispatch(fetchPaintings(setQueryFilter()));

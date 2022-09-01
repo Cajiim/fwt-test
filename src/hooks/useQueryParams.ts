@@ -21,7 +21,16 @@ const useQueryParams = () => {
     setSearchParams(searchParams);
   };
 
-  return { queryFilter, setQueryFilter, deleteQueryFilter };
+  const deleteAllFilter = () => {
+    searchParams.delete('q');
+    searchParams.delete('author');
+    searchParams.delete('location');
+    searchParams.delete('created_gte');
+    searchParams.delete('created_lte');
+    setSearchParams(searchParams);
+  };
+
+  return { queryFilter, setQueryFilter, deleteQueryFilter, deleteAllFilter };
 };
 
 export default useQueryParams;

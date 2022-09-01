@@ -15,11 +15,22 @@ export const getPaintings = (urlFilter: TFilter) => {
   if (lte) paramsObj.created_lte = lte;
   if (page) paramsObj._page = page;
   if (limit) paramsObj._limit = limit;
+  paramsObj._sort = 'name';
   return instance.get(`/paintings${expand}`, {
     params: paramsObj,
   });
 };
 
-export const getLocations = () => instance.get('/locations');
+export const getLocations = () =>
+  instance.get('/locations', {
+    params: {
+      _sort: 'location',
+    },
+  });
 
-export const getAuthors = () => instance.get('/authors');
+export const getAuthors = () =>
+  instance.get('/authors', {
+    params: {
+      _sort: 'name',
+    },
+  });

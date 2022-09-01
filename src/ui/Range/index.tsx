@@ -5,23 +5,29 @@ import RangeChildren from '../RangeChildren';
 import useQueryParams from '../../hooks/useQueryParams';
 import { useDebouncedCallback } from 'use-debounce';
 import useOutsideClick from '../../hooks/useOutsideClick';
+import { useAppDispatch } from '../../hooks/useReduxHooks';
+import { restorePage } from '../../redux/reducers/reducerSelects';
 import styles from './index.scss';
 const cn = classNames.bind(styles);
 
 type TRange = { isDarkTheme: boolean };
 
 const Range: FC<TRange> = ({ isDarkTheme }) => {
+  const dispatch = useAppDispatch();
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const { setQueryFilter, deleteQueryFilter } = useQueryParams();
   const debounceSet = useDebouncedCallback(setQueryFilter, 400);
   const debounceDelete = useDebouncedCallback(deleteQueryFilter, 400);
+  const debounceDispatch = useDebouncedCallback(dispatch, 400);
   const valueFilterFrom = (value: string) => {
     if (value) debounceSet('created_gte', value);
     if (!value.length) debounceDelete('created_gte');
+    debounceDispatch(restorePage());
   };
   const valueFilterBefore = (value: string) => {
     if (value) debounceSet('created_lte', value);
     if (!value.length) debounceDelete('created_lte');
+    debounceDispatch(restorePage());
   };
   const ref = useRef(null);
   const toggleOpen = () => setIsOpen(!isOpen);

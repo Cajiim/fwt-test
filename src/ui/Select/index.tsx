@@ -1,11 +1,12 @@
-import { FC, useState, useRef, memo } from 'react';
+import { FC, useState, useRef, memo, useCallback } from 'react';
 import SimpleBar from 'simplebar-react';
 import classNames from 'classnames';
 import Arrow from '../Arrow';
 import { ReactComponent as ClearSelect } from '../../assets/close.svg';
 import useQueryParams from '../../hooks/useQueryParams';
 import useOutsideClick from '../../hooks/useOutsideClick';
-import { useAppDispatch } from '../../hooks/useReduxHooks';
+import { useAppDispatch, useAppSelector } from '../../hooks/useReduxHooks';
+import { useSearchParams } from 'react-router-dom';
 import { restorePage } from '../../redux/reducers/reducerSelects';
 import type { TSelectItem } from '../../types';
 import styles from './index.scss';
@@ -16,16 +17,28 @@ type TSelect = {
   isDarkTheme: boolean;
   value: string;
   data: TSelectItem[];
-  onChange: (value: string) => void;
+  params: string | null;
 };
 
-const Select: FC<TSelect> = ({ isDarkTheme, value, data, onChange }) => {
+const Select: FC<TSelect> = ({ isDarkTheme, value, data, params }) => {
   const dispatch = useAppDispatch();
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const { queryFilter, deleteQueryFilter } = useQueryParams();
-  const [selectValue, setSelectValue] = useState<string>(
-    value === 'Author' ? queryFilter.author || value : queryFilter.location || value
-  );
+  const { deleteQueryFilter, setQueryFilter } = useQueryParams();
+  const { dataLocations, dataAuthors } = useAppSelector(({ selects }) => selects);
+  const [searchParams] = useSearchParams();
+
+  const getItems = useCallback(() => {
+    let author = 'Author';
+    let location = 'Location';
+    dataAuthors.find((el) => (el.id == searchParams.get('author') ? (author = el.name) : ''));
+    dataLocations.find((el) =>
+      el.id == searchParams.get('location') ? (location = el.location) : ''
+    );
+    return { author, location };
+  }, [dataAuthors, dataLocations, searchParams]);
+  const selectContent =
+    value === 'Author' ? getItems().author || value : getItems().location || value;
+
   const ref = useRef(null);
   const toggleOpen = () => setIsOpen(!isOpen);
   useOutsideClick(ref, toggleOpen);
@@ -39,15 +52,14 @@ const Select: FC<TSelect> = ({ isDarkTheme, value, data, onChange }) => {
       })}
       onClick={() => setIsOpen(!isOpen)}
       aria-hidden="true">
-      <span className="select__name">{selectValue}</span>
+      <span className="select__name">{selectContent}</span>
       <div
         className={cn('select__clear', {
-          select__clear_hidden: selectValue === 'Author' || selectValue === 'Location',
+          select__clear_hidden: params == null,
         })}
         onClick={(e) => {
           e.stopPropagation();
           deleteQueryFilter(value.toLowerCase());
-          setSelectValue(value);
         }}
         aria-hidden="true">
         <ClearSelect
@@ -75,9 +87,13 @@ const Select: FC<TSelect> = ({ isDarkTheme, value, data, onChange }) => {
                   select__items_dark: isDarkTheme,
                 })}
                 onClick={() => {
-                  onChange(el.name || el.location);
-                  setSelectValue(el.name || el.location);
                   dispatch(restorePage());
+                  if (el.name) {
+                    setQueryFilter('author', el.id);
+                  }
+                  if (el.location) {
+                    setQueryFilter('location', el.id);
+                  }
                 }}
                 key={el.id}
                 aria-hidden="true">

@@ -31,6 +31,7 @@ export type TFilterParamsObj = {
   created_lte?: string;
   _page?: number;
   _limit?: number;
+  _sort?: string;
 };
 
 export type TSelectItem = {
